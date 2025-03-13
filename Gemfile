@@ -57,6 +57,8 @@ group :development, :test do
   gem 'rubocop-require_tools'
   gem 'rubocop-rspec'
 
+  # Testing gems
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
