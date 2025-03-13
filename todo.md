@@ -1,7 +1,4 @@
-Below is a **todo.md** file that outlines the **overall plan** in **checklist** format. Each item has sub-steps to ensure you can methodically track progress. Feel free to customize or rearrange based on your workflow.
-
-```markdown
-# Personal Task Management App — To-Do Checklist
+# TidyTask - A Personal Task Management App — To-Do Checklist
 
 A comprehensive, step-by-step guide to building the application with a focus on TDD, incremental development, and thorough testing.
 
@@ -17,12 +14,12 @@ A comprehensive, step-by-step guide to building the application with a focus on 
   - [x] `bundle install`
   - [x] `rails generate rspec:install`
   - [x] Confirm `.rspec` and `spec_helper.rb` are created
-- [ ] **Integrate Devise**
-  - [ ] Add `devise` to Gemfile
-  - [ ] `rails generate devise:install`
-  - [ ] Confirm Devise initializer exists
-- [ ] **Commit to Version Control**
-  - [ ] Ensure initial commit includes Gemfile, .rspec, etc.
+- [x] **Integrate Devise**
+  - [x] Add `devise` to Gemfile
+  - [x] `rails generate devise:install`
+  - [x] Confirm Devise initializer exists
+- [x] **Commit to Version Control**
+  - [x] Ensure initial commit includes Gemfile, .rspec, etc.
 
 ---
 
@@ -213,4 +210,3 @@ A comprehensive, step-by-step guide to building the application with a focus on 
 - Commit frequently so you have a clear history of each step.
 
 Good luck with building your **Personal Task Management App**!
-```
