@@ -25,21 +25,21 @@ A comprehensive, step-by-step guide to building the application with a focus on 
 
 ## Chunk B: Basic Models & Migrations
 
-- [ ] **Generate User Model (Devise)**
-  - [ ] `rails generate devise User`
-  - [ ] Migrate database
-  - [ ] Validate `User` model is created
-- [ ] **Generate Task Model**
-  - [ ] `rails generate model Task title:string completed:boolean user:references`
-  - [ ] Set defaults (completed: false) in migration
-  - [ ] Migrate database
-- [ ] **Add Associations & Validations**
-  - [ ] `User has_many :tasks`
-  - [ ] Task validations (`title` presence, `completed` default, belongs to user)
-- [ ] **Model Specs**
-  - [ ] Write specs for `Task` validations & associations
-  - [ ] Write specs for `User` associations
-  - [ ] Run tests (they should pass)
+- [x] **Generate User Model (Devise)**
+  - [x] `rails generate devise User`
+  - [x] Migrate database
+  - [x] Validate `User` model is created
+- [x] **Generate Task Model**
+  - [x] `rails generate model Task title:string completed:boolean user:references`
+  - [x] Set defaults (completed: false) in migration
+  - [x] Migrate database
+- [x] **Add Associations & Validations**
+  - [x] `User has_many :tasks`
+  - [x] Task validations (`title` presence, `completed` default, belongs to user)
+- [x] **Model Specs**
+  - [x] Write specs for `Task` validations & associations
+  - [x] Write specs for `User` associations
+  - [x] Run tests (they should pass)
 
 ---
 
