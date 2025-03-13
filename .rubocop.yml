@@ -1,8 +1,114 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+# Load additional cops for Rails
+plugins:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+# General settings
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2 # Adjust this based on your Rails version
+  Exclude:
+    - "bin/**/*"
+    - "db/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "log/**/*"
+    - "coverage/**/*"
+    - "public/**/*"
+    - "storage/**/*"
+    - "config/environments/**/*"
+    - "config/initializers/**/*"
+    - "spec/fixtures/**/*"
+    - "spec/dummy/**/*"
+    - "Gemfile.lock"
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+# Rails-specific rules
+Rails:
+  Enabled: true
+
+# Formatting rules
+Layout/LineLength:
+  Max: 120 # GitHub prefers 120 instead of 80
+
+Layout/EndOfLine:
+  EnforcedStyle: lf # Use LF for compatibility across OS
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Layout/EmptyLines:
+  AllowMultipleEmptyLines: false
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+
+Style/FrozenStringLiteralComment:
+  Enabled: false # GitHub does not enforce this
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes # Use single quotes unless interpolation is needed
+
+Style/NumericLiterals:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyle: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyle: consistent_comma
+
+Style/Documentation:
+  Enabled: false # Do not require documentation for every class/module
+
+# Method & class size limits (to encourage maintainable code)
+Metrics/MethodLength:
+  Max: 15 # Shorter methods improve readability
+
+Metrics/ClassLength:
+  Max: 200 # Allows some flexibility while avoiding bloated classes
+
+Metrics/AbcSize:
+  Max: 20 # Enforces complexity limits
+
+Metrics/CyclomaticComplexity:
+  Max: 8 # Avoid overly complex methods
+
+# Performance cops
+Performance/RedundantMerge:
+  Enabled: true
+
+Performance/RedundantSortBlock:
+  Enabled: true
+
+# Rails cops
+Rails/HasAndBelongsToMany:
+  Enabled: false # Allow HABTM if needed
+
+Rails/Output:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: true
+
+Rails/Delegate:
+  Enabled: true
+
+# Ignore generated and test files
+RSpec:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/UselessAssignment:
+  Enabled: true
+
+# GitHub-specific output format
+inherit_mode:
+  merge:
+    - Exclude
+    - Include
