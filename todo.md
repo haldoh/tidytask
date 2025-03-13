@@ -9,14 +9,14 @@ A comprehensive, step-by-step guide to building the application with a focus on 
 
 ## Chunk A: Project Setup
 
-- [ ] **Initialize Rails Project**
-  - [ ] `rails new personal-task-manager -T --database=postgresql`
-  - [ ] Validate that the project structure is correct
-- [ ] **Add RSpec**
-  - [ ] Include `rspec-rails` in Gemfile
-  - [ ] `bundle install`
-  - [ ] `rails generate rspec:install`
-  - [ ] Confirm `.rspec` and `spec_helper.rb` are created
+- [x] **Initialize Rails Project**
+  - [x] `rails new personal-task-manager -T --database=postgresql`
+  - [x] Validate that the project structure is correct
+- [x] **Add RSpec**
+  - [x] Include `rspec-rails` in Gemfile
+  - [x] `bundle install`
+  - [x] `rails generate rspec:install`
+  - [x] Confirm `.rspec` and `spec_helper.rb` are created
 - [ ] **Integrate Devise**
   - [ ] Add `devise` to Gemfile
   - [ ] `rails generate devise:install`
