@@ -33,8 +33,12 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
-    redirect_to tasks_url, notice: t('.success')
+    @task = Task.find(params[:id])
+    if @task.soft_delete
+      redirect_to tasks_path, notice: 'Task was successfully deleted.'
+    else
+      redirect_to tasks_path, alert: 'Error deleting task.'
+    end
   end
 
   private

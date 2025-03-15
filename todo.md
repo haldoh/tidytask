@@ -62,19 +62,19 @@ A comprehensive, step-by-step guide to building the application with a focus on 
 
 ## Chunk D: Soft Delete & Testing
 
-- [ ] **Add Soft Delete Column**
-  - [ ] `rails generate migration AddDeletedAtToTasks deleted_at:datetime`
-  - [ ] Migrate database
-- [ ] **Implement Soft Delete in Model**
-  - [ ] Update `Task` to default-scope tasks where `deleted_at` is `nil`
-  - [ ] Possibly add a `scope :active, -> { where(deleted_at: nil) }`
-- [ ] **Update Controller Delete Logic**
-  - [ ] `tasks_controller.rb`: set `deleted_at` instead of real destroy
-  - [ ] Confirm tasks with `deleted_at` do not appear in `index/show`
-- [ ] **Test Soft Delete**
-  - [ ] Request specs verifying tasks still exist in DB
-  - [ ] Confirm tasks are hidden from standard fetches
-  - [ ] Tests pass
+- [x] **Add Soft Delete Column**
+  - [x] `rails generate migration AddDeletedAtToTasks deleted_at:datetime`
+  - [x] Migrate database
+- [x] **Implement Soft Delete in Model**
+  - [x] Update `Task` to default-scope tasks where `deleted_at` is `nil`
+  - [x] Possibly add a `scope :active, -> { where(deleted_at: nil) }`
+- [x] **Update Controller Delete Logic**
+  - [x] `tasks_controller.rb`: set `deleted_at` instead of real destroy
+  - [x] Confirm tasks with `deleted_at` do not appear in `index/show`
+- [x] **Test Soft Delete**
+  - [x] Request specs verifying tasks still exist in DB
+  - [x] Confirm tasks are hidden from standard fetches
+  - [x] Tests pass
 
 ---
 

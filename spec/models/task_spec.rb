@@ -16,4 +16,26 @@ RSpec.describe Task, type: :model do
       expect(task.completed).to be false
     end
   end
+
+  describe 'soft delete' do
+    let(:user) { create(:user) }
+    let!(:task) { create(:task, user: user) }
+
+    it 'sets deleted_at when soft deleted' do
+      expect do
+        task.soft_delete
+      end.to change { task.deleted_at }.from(nil).to(be_present)
+    end
+
+    it 'excludes soft-deleted tasks from default scope' do
+      task.soft_delete
+      expect(Task.all).not_to include(task)
+      expect(Task.unscoped.find(task.id)).to eq(task)
+    end
+
+    it 'excludes soft-deleted tasks from active scope' do
+      task.soft_delete
+      expect(Task.active).not_to include(task)
+    end
+  end
 end

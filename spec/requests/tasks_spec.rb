@@ -142,16 +142,31 @@ RSpec.describe 'Tasks', type: :request do
   end
 
   describe 'DELETE /tasks/:id' do
-    it 'destroys the requested task' do
-      task_to_delete = create(:task, user: user)
+    let!(:task) { create(:task, user: user) }
+
+    it 'soft deletes the task' do
       expect do
-        delete task_path(task_to_delete)
-      end.to change(Task, :count).by(-1)
+        delete task_path(task)
+      end.not_to change(Task.unscoped, :count)
+
+      expect(response).to redirect_to(tasks_path)
+      expect(Task.find_by(id: task.id)).to be_nil
+      expect(Task.unscoped.find(task.id).deleted_at).to be_present
     end
 
-    it 'redirects to the tasks list' do
+    it 'does not show soft-deleted tasks in index' do
       delete task_path(task)
-      expect(response).to redirect_to(tasks_path)
+
+      get tasks_path
+      expect(response).to have_http_status(:success)
+      expect(response.body).not_to include(task.title)
+    end
+
+    it 'returns 404 when trying to view a soft-deleted task' do
+      delete task_path(task)
+
+      get task_path(task)
+      expect(response).to have_http_status(:not_found)
     end
   end
 end
