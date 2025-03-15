@@ -45,18 +45,18 @@ A comprehensive, step-by-step guide to building the application with a focus on 
 
 ## Chunk C: Task CRUD & Testing
 
-- [ ] **Write Request Specs (Tasks)**
-  - [ ] `GET /tasks` (index)
-  - [ ] `POST /tasks` (create)
-  - [ ] `GET /tasks/:id` (show)
-  - [ ] `PUT/PATCH /tasks/:id` (update)
-  - [ ] `DELETE /tasks/:id` (simple destroy, for now)
-  - [ ] Confirm these specs fail before implementation
-- [ ] **Implement TasksController**
-  - [ ] Implement each action minimally to pass specs
-  - [ ] Ensure strong parameters for tasks
-  - [ ] Update `routes.rb` (resources :tasks)
-  - [ ] Run tests (they should now pass)
+- [x] **Write Request Specs (Tasks)**
+  - [x] `GET /tasks` (index)
+  - [x] `POST /tasks` (create)
+  - [x] `GET /tasks/:id` (show)
+  - [x] `PUT/PATCH /tasks/:id` (update)
+  - [x] `DELETE /tasks/:id` (simple destroy, for now)
+  - [x] Confirm these specs fail before implementation
+- [x] **Implement TasksController**
+  - [x] Implement each action minimally to pass specs
+  - [x] Ensure strong parameters for tasks
+  - [x] Update `routes.rb` (resources :tasks)
+  - [x] Run tests (they should now pass)
 
 ---
 

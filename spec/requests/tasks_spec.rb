@@ -5,7 +5,12 @@ RSpec.describe 'Tasks', type: :request do
   let(:task) { create(:task, user: user) }
 
   before do
-    sign_in user
+    Warden.test_mode!
+    login_as(user, scope: :user)
+  end
+
+  after do
+    Warden.test_reset!
   end
 
   describe 'GET /tasks' do
